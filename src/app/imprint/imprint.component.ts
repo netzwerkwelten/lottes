@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BaseRestService} from '../shared/services/base.rest.service'
 
 @Component({
   selector: 'app-imprint',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImprintComponent implements OnInit {
 
-  constructor() { }
+  private data;
+
+  constructor(private BaseRestService: BaseRestService) { }
 
   ngOnInit() {
   }
+  private getData(){
 
+    this.BaseRestService.geData().subscribe(
+        (response) => {
+          this.data = response;
+        }
+    );
+  }
 }

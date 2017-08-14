@@ -37,7 +37,7 @@ export class RootComponent implements OnInit {
       this.loading = false;
       // this.animation = "out";
       setTimeout(()=>{
-        this.animation = "enter";
+        this.animation = "";
       },200);
 
     }
