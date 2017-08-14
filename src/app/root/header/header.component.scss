@@ -1,0 +1,13 @@
+
+@import "common";
+
+header{
+  .nav-item{
+    cursor: pointer;
+    &.active{
+      outline: none !important;
+    }
+  }
+
+}
+
