@@ -7,11 +7,12 @@ import {
     NavigationCancel,
     NavigationError
 } from "@angular/router";
+import { routerTransition } from '../shared/animation/transition';
 
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss']
+  styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
 
@@ -20,7 +21,8 @@ export class RootComponent implements OnInit {
 
   constructor(private router:Router) {
     router.events.subscribe((event: RouterEvent) => {
-      this.navigationInterceptor(event)
+      this.animation = 'out';
+      this.navigationInterceptor(event);
     });
   }
 
@@ -31,13 +33,15 @@ export class RootComponent implements OnInit {
     if (event instanceof NavigationStart) {
       this.loading = true;
       this.animation = 'out';
+      setTimeout(()=>{
+        this.animation = 'out';
+      },200);
     }
     if (event instanceof NavigationEnd) {
 
       this.loading = false;
-      // this.animation = "out";
       setTimeout(()=>{
-        this.animation = "";
+        this.animation = '';
       },200);
 
     }

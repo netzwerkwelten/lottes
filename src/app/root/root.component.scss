@@ -26,11 +26,9 @@
 .container-fluid{
   height: 100vh;
   /* padding: 10px; */
-  text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-
   .-content{
     position: relative;
     height: 100vh;

@@ -10,6 +10,7 @@ import {appRoutes} from "./app.routes";
 import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
 import { HeaderComponent } from './root/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOptions,  router: Router) {
   options.withCredentials = true;
@@ -29,7 +30,8 @@ export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOpt
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: false }),
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

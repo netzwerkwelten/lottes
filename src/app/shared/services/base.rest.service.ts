@@ -9,7 +9,7 @@ export class BaseRestService {
     constructor(private http: Http) {
     }
 
-    public geData(){
+    public getData(){
         return this.http.get(
             `${environment.apiUrl}/path`
         ).map(response => {

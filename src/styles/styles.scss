@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Oswald:200,300,400,500,700');
 body{
-  background: #f2f2f2;
-  font-size: 12px;
-  color: #4089a6;
+  background-image: url(/assets/images/Chalkboard-background.jpg);
+  background-size: cover;
+  font-size: 16px;
+  color: #f1f1f1;
   -webkit-font-smoothing: antialiased;
-
+  font-family: 'Oswald', sans-serif;
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Gochi Hand', cursive;
+  }
   &:before,
   &:after{
     content: '';
