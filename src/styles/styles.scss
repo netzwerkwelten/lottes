@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Oswald:200,300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
 body{
   background-image: url(/assets/images/Chalkboard-background.jpg);
-  background-size: cover;
   font-size: 16px;
-  color: #f1f1f1;
+  color: #0e0e0e;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   h1,h2,h3,h4,h5,h6{
-    font-family: 'Gochi Hand', cursive;
+    font-family: 'Roboto Slab', serif;
+    text-shadow: 2px 2px 2px #ffffff;
   }
   &:before,
   &:after{
