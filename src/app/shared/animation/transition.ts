@@ -8,10 +8,12 @@ function fade() {
   return trigger('routerTransition', [
     state('void', style({
       left: 15,
+      padding: '10vh 5vh 5vh 10vh',
       opacity: 1
     })),state('*', style({
       position: 'absolute',
       left: 15,
+      padding: '10vh 5vh 5vh 10vh',
       opacity: 1
     })),
     transition(':enter', [
@@ -24,6 +26,7 @@ function fade() {
       animate('1.1s ease-in-out', style({
         left: 15,
         opacity: 1,
+        padding: '10vh 5vh 5vh 10vh',
         filter: 'blur(0px)'
       }))
     ]),
