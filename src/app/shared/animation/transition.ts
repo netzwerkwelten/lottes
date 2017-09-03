@@ -7,13 +7,14 @@ export function routerTransition() {
 function fade() {
   return trigger('routerTransition', [
     state('void', style({
-      left: 15,
-      padding: '10vh 5vh 5vh 10vh',
+      left: 0,
+      margin: '-15px',
+      padding: '0',
       opacity: 1
     })),state('*', style({
       position: 'absolute',
-      left: 15,
-      padding: '10vh 5vh 5vh 10vh',
+      margin: '-15px',
+      left: 0,
       opacity: 1
     })),
     transition(':enter', [
@@ -24,9 +25,9 @@ function fade() {
         filter: 'blur(15px)'
       }),
       animate('1.1s ease-in-out', style({
-        left: 15,
+        left: 0,
         opacity: 1,
-        padding: '10vh 5vh 5vh 10vh',
+        margin: '-15px',
         filter: 'blur(0px)'
       }))
     ]),

@@ -2,6 +2,7 @@
   <a class="navbar-brand logo pull-right" routerLink="/">
     <img src="assets/images/logo.png"/>
   </a>
+
   <div class="nav-button" (mousemove)='hoverdiv($event)' (mouseleave)="resetdiv( )" (click)="callapse = !callapse" >
     <span class="menu-btn_circle" ratio="1" scale="0.5" [style]="menueStyle()">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" xml:space="preserve">
@@ -21,6 +22,13 @@
     </ul>
   </div>
   <div class="menu-wrapper" [ngClass]="{'is-active': callapse}">
-    <div class="bg-image"></div>
+    <div class="bg-image">
+
+      <div id="large-header" class="large-header" #largeHeader>
+        <canvas id="demo-canvas" #canvas></canvas>
+        <h1 class="main-title">PSIONIC <span class="thin">DIGITAL</span></h1>
+      </div>
+
+    </div>
   </div>
 </header>
