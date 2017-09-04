@@ -1,23 +1,22 @@
-
 @import "common";
 
-header{
+header {
   height: 100px;
-  .logo{
+  .logo {
     float: right;
-    img{
+    img {
       height: 50px;
       width: auto;
     }
   }
-  .nav-item{
+  .nav-item {
 
     cursor: pointer;
-    &.active{
+    &.active {
       outline: none !important;
     }
   }
-  .nav-button{
+  .nav-button {
     position: fixed;
     z-index: 1000;
     top: 0px;
@@ -26,7 +25,7 @@ header{
     width: 150px;
     height: 150px;
     cursor: pointer;
-    .menu-btn_text{
+    .menu-btn_text {
       font-family: $font-family-slap;
       letter-spacing: .2em;
       font-size: 0.75em;
@@ -35,27 +34,27 @@ header{
       left: 30px;
       position: absolute;
       display: inline-block;
-      color:$light-color;
+      color: $light-color;
       -webkit-transition: all 0.1s ease-in-out;
       -moz-transition: all 0.1s ease-in-out;
       -o-transition: all 0.1s ease-in-out;
       -ms-transition: all 0.1s ease-in-out;
       transition: all 0.1s ease-in-out;
     }
-    .menu-btn_circle{
+    .menu-btn_circle {
       svg {
         stroke: $light-color;
         display: inline-block;
         width: 50px;
         height: 50px;
-        transition: all .25s cubic-bezier(.215,.61,.355,1);
+        transition: all .25s cubic-bezier(.215, .61, .355, 1);
         stroke-dasharray: 132;
         transform: rotate(20deg);
         opacity: 1;
       }
       position: absolute;
       display: inline-block;
-      color:$light-color;
+      color: $light-color;
       top: 10px;
       left: 10px;
       -webkit-transition: all 0.1s ease-in-out;
@@ -64,14 +63,14 @@ header{
       -ms-transition: all 0.1s ease-in-out;
       transition: all 0.1s ease-in-out;
     }
-    &:hover{
-      .menu-btn_circle{
-        svg{
+    &:hover {
+      .menu-btn_circle {
+        svg {
           width: 75px;
           height: 75px;
         }
       }
-      .menu-btn_text{
+      .menu-btn_text {
         letter-spacing: 0.75em;
         font-size: 0.65em;
         top: 40px;
@@ -85,20 +84,19 @@ header{
     visibility: hidden;
     opacity: 0;
     //transform: translateZ(0);
-    transition: all 1.2s cubic-bezier(.535,0,0,1) .2s;
+    transition: all 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
     position: absolute;
-    top:0px;
+    top: 0px;
     bottom: 0px;
     width: 100vh;
     height: 100vh;
     z-index: 900;
-    .bg-image{
+    .bg-image {
       position: absolute;
       width: 100vw;
       height: 100vh;
-      top:0px;
+      top: 0px;
       bottom: 0px;
-      background-image: url(/assets/images/menu-texture-1920.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -106,61 +104,70 @@ header{
       opacity: .95;
     }
 
-    &.is-active{
+    &.is-active {
       opacity: 1;
       visibility: visible;
     }
 
   }
-  .menu-list{
+  .menu-list {
     padding: 5% 0;
+    border: 2px solid #ebffeb;
+    background: rgba(0, 0, 0, 0.77);
+    min-height: 90%;
     z-index: 1000;
     list-style: none;
-    height: 90%;
     top: 5%;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: auto;
     display: block;
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transition: all 1.2s cubic-bezier(.535,0,0,1) .2s;
-    &.is-active{
+    transition: all 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
+    &.is-active {
       opacity: 1;
       visibility: visible;
       transform: scale(.80) translateZ(0);
     }
-    li{
-      h2{
-        color: #858c90;
+    &:hover{
+      li{
+        opacity: 0.55;
+        filter: blur(1px);
+        &:hover {
+          opacity: 1;
+          filter: none;
+        }
+      }
+    }
+    li {
+      h2 {
+        color: #ebffeb;
         font-size: 4vw !important;
         line-height: 10vw;
+        display: inline;
+        text-shadow: 2px 2px 5px #000000;
       }
       text-align: center;
       font-weight: bold;
       cursor: pointer;
-      transition: all .4s cubic-bezier(.535,0,0,1) .2s;
-      opacity: .25;
+      transition: all .4s cubic-bezier(.535, 0, 0, 1) .2s;
       color: #f9f4ea;
       text-transform: uppercase;
-      &:hover,
-      &.active{
-        opacity: 1;
-      }
-
     }
   }
 }
 
-@media (max-width: 991px){
-  header{
+@media (max-width: 991px) {
+  header {
     .menu-wrapper {
       width: 10vh;
       height: 8vh;
     }
-    .menu-list{
-      li{
-        h2{
+    .menu-list {
+      li {
+        h2 {
           font-size: 6.5vw !important;
         }
       }
@@ -180,7 +187,7 @@ header{
 }
 
 #large-header {
-  background-image: url('http://cdn.paper4pc.com/images/blue-space-wallpaper-4.jpg');
+  background-image: url(/assets/images/navigation_bg.png);
 }
 
 .main-title {
@@ -192,8 +199,8 @@ header{
   text-align: center;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate3d(-50%,-50%,0);
-  transform: translate3d(-50%,-50%,0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .demo-1 .main-title {
@@ -206,7 +213,7 @@ header{
   font-weight: 200;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   .demo-1 .main-title {
     font-size: 3em;
   }
