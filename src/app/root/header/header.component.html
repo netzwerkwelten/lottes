@@ -1,7 +1,7 @@
 <header>
-  <a class="navbar-brand logo pull-right" routerLink="/">
-    <img src="assets/images/logo.png"/>
-  </a>
+  <!--<a class="navbar-brand logo pull-right" routerLink="/">-->
+    <!--<img src="assets/images/logo.png"/>-->
+  <!--</a>-->
 
   <div class="nav-button" (mousemove)='hoverdiv($event)' (mouseleave)="resetdiv( )" (click)="callapse = !callapse" >
     <span class="menu-btn_circle" ratio="1" scale="0.5" [style]="menueStyle()">
@@ -9,7 +9,7 @@
         <circle fill="none" stroke-width="1" stroke-miterlimit="10" cx="25" cy="25" r="23.8"></circle>
       </svg>
     </span>
-    <span class="menu-btn_text" ratio="0.5" scale="0" [style]="textStyle()"><span *ngIf="!callapse" >MENU</span><span *ngIf="callapse" >CLOSE</span></span>
+    <span class="menu-btn_text" ratio="0.5" scale="0" [style]="textStyle()"><span *ngIf="!callapse" >NAVIGATION</span><span *ngIf="callapse" >CLOSE</span></span>
   </div>
   <div>
     <ul class="menu-list" [ngClass]="{'is-active': callapse}">

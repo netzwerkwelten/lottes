@@ -174,7 +174,6 @@ export class HeaderComponent implements OnInit {
   private animate() {
       this.ctx.clearRect(0, 0, this.width, this.height);
       for (let i in this.points) {
-        // detect points in range
         if (this.points[i]) {
           if (Math.abs(this.getDistance(this.target, this.points[i])) < 4000) {
             this.points[i].active = 0.3;
@@ -194,7 +193,6 @@ export class HeaderComponent implements OnInit {
           this.drawLines(this.points[i]);
           if ( this.points[i].circle ) {
             this.drawer(this.points[i]);
-            // this.points[i].circle.draw();
           }
         }
       }
@@ -212,7 +210,6 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  // Canvas manipulation
   private drawLines(p) {
     if (!p.active) {
       return;
@@ -234,16 +231,12 @@ export class HeaderComponent implements OnInit {
   }
 
   private drawer(pos) {
-    // if (!pos.active) {
-    //   return;
-    // }
     this.ctx.beginPath();
     this.ctx.arc(pos.circle.x, pos.circle.y, pos.circle.rad, 0, 2 * Math.PI, false);
     this.ctx.fillStyle = 'rgba(235,255,235,' + pos.active + ')';
     this.ctx.fill();
   }
 
-  // Util
   private getDistance(p1, p2) {
     return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
   }

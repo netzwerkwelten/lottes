@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
 
-$font-family-base: 'Montserrat', sans-serif;
-$font-family-slap: 'Montserrat', serif;
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-slap: 'Open Sans', serif;
 
-$font-color: #010101;
-$light-color: #858c90;
+$title-color: #f1f1f1;
+$font-color: #ece1c8;
+$light-color: #fff;
 
 body{
-  background-image: url(/assets/images/page_bg.png);
+  //background-image: url(/assets/images/page_bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
+  background-color: #e0dacd;
   height: 100vh;
-  font-size: 16px;
+  font-size: .9rem;
   color: $font-color;
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-base;
@@ -21,15 +22,17 @@ body{
     font-family: $font-family-slap;
     text-transform: uppercase;
     font-weight: 600;
+    color: $title-color;
   }
   h1{
+    font-size: 1.9em;
     &:before{
-      background: #010101;
-      color: #fff;
+      background: $font-color;
+      color: #000;
       font-size: 0.3em;
       position: relative;
       font-weight: 900;
-      top: -29px;
+      top: -20px;
       left: 25px;
       padding: 3px 5px;
       font-family: "Montserrat", sans-serif;
@@ -67,14 +70,15 @@ body{
     width: 100vw;
     text-align: center;
     .content-middle {
-      background: #fff;
-      border: 1px solid #eaeaea;
+      //background: #fff;
+      //border: 1px solid #eaeaea;
       padding: 2em 3em 2em 3em;
       margin: 3em auto;
-      color: #000;
+      background: transparentize(#fff,.9);
       line-height: 1.7em;
       width: 80%;
       max-width: 1200px;
+      min-height: 80vh;
       h3{
         font-size: 1.6em;
         font-weight: 900;

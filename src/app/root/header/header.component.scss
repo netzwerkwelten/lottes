@@ -19,8 +19,8 @@ header {
   .nav-button {
     position: fixed;
     z-index: 1000;
-    top: 0px;
-    left: 0px;
+    top: 20px;
+    left: 20px;
     padding: 10px;
     width: 150px;
     height: 150px;
@@ -100,7 +100,7 @@ header {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: #fff;
+      background: radial-gradient(#666, #222);
       opacity: .95;
     }
 
@@ -112,9 +112,9 @@ header {
   }
   .menu-list {
     padding: 5% 0;
-    border: 2px solid #ebffeb;
-    background: rgba(0, 0, 0, 0.77);
-    min-height: 90%;
+    //border: 2px solid #ebffeb;
+    //background: rgba(0, 0, 0, 0.77);
+    //min-height: 90%;
     z-index: 1000;
     list-style: none;
     top: 5%;
@@ -143,11 +143,11 @@ header {
     }
     li {
       h2 {
-        color: #ebffeb;
         font-size: 4vw !important;
         line-height: 10vw;
         display: inline;
-        text-shadow: 2px 2px 5px #000000;
+        color: $title-color;
+        //text-shadow: 2px 2px 5px #000000;
       }
       text-align: center;
       font-weight: bold;
@@ -179,15 +179,12 @@ header {
 .large-header {
   position: relative;
   width: 100%;
-  background: #333;
   overflow: hidden;
-  background-size: cover;
-  background-position: center center;
   z-index: 1;
 }
 
 #large-header {
-  background-image: url(/assets/images/navigation_bg.png);
+  //background-image: url(/assets/images/navigation_bg.png);
 }
 
 .main-title {
