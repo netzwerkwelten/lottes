@@ -1,6 +1,6 @@
 import {Component, OnInit, ElementRef, Renderer2} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {TweenLite, ctx } from 'gsap';
+import {TweenLite, ctx, TimelineMax } from 'gsap';
 
 
 @Component({
@@ -53,9 +53,6 @@ export class HeaderComponent implements OnInit {
   }
 
   private canvasAnimation() {
-
-
-    // Main
     this.initHeader();
     this.initAnimation();
     this.addListeners();
@@ -77,10 +74,10 @@ export class HeaderComponent implements OnInit {
     this.ctx = this.canvas.getContext('2d');
     // create points
     this.points = [];
-    for (let x = 0; x < this.width; x = x + this.width / 20) {
-      for (let y = 0; y < this.height; y = y + this.height / 20) {
-        const px = x + Math.random() * this.width / 20;
-        const py = y + Math.random() * this.height / 20;
+    for (let x = 0; x < this.width; x = x + this.width / 25) {
+      for (let y = 0; y < this.height; y = y + this.height / 25) {
+        const px = x + Math.random() * this.width / 25;
+        const py = y + Math.random() * this.height / 25;
         const p = {x: px, originX: px, y: py, originY: py};
         this.points.push(p);
       }
@@ -91,7 +88,7 @@ export class HeaderComponent implements OnInit {
       const closest = [];
       const p1 = this.points[i];
       for (let j in this.points) {
-        const p2 = this.points[j]
+        const p2 = this.points[j];
         if (!(p1 === p2)) {
           let placed = false;
           for (let k = 0; k < 5; k++) {
@@ -118,7 +115,7 @@ export class HeaderComponent implements OnInit {
 
     // assign a circle to each point
     for (let i in this.points) {
-      const c = new this.Circle(this.points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
+      const c = new this.Circle(this.points[i], 22 + Math.random() * 10, 'rgba(255,255,255,0.3)');
       this.points[i].circle = c;
     }
   }
@@ -201,7 +198,7 @@ export class HeaderComponent implements OnInit {
 
   private shiftPoint(p) {
     const me = this;
-    TweenLite.to(p, 1 + 1 * Math.random(), {
+    TweenLite.to(p, 1 + 0.8 * Math.random(), {
       x: p.originX - 50 + Math.random() * 100,
       y: p.originY - 50 + Math.random() * 100, ease: 'Circ.easeInOut',
       onComplete: function () {
@@ -232,7 +229,7 @@ export class HeaderComponent implements OnInit {
 
   private drawer(pos) {
     this.ctx.beginPath();
-    this.ctx.arc(pos.circle.x, pos.circle.y, pos.circle.rad, 0, 2 * Math.PI, false);
+    this.ctx.arc(pos.circle.x, pos.circle.y, pos.circle.rad, 0, 3 * Math.PI, false);
     this.ctx.fillStyle = 'rgba(235,255,235,' + pos.active + ')';
     this.ctx.fill();
   }
@@ -240,5 +237,6 @@ export class HeaderComponent implements OnInit {
   private getDistance(p1, p2) {
     return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
   }
+
 
 }

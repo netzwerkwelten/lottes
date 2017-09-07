@@ -84,7 +84,7 @@ header {
     visibility: hidden;
     opacity: 0;
     //transform: translateZ(0);
-    transition: all 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
+    transition: all 1.2s cubic-bezier(.535, 0, 0, 1);
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -120,17 +120,21 @@ header {
     top: 5%;
     left: 0;
     right: 0;
-    width: auto;
     display: block;
     opacity: 0;
+    margin: 0px auto;
+    width: 30vw;
     visibility: hidden;
     position: absolute;
     transition: all 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
+
     &.is-active {
       opacity: 1;
       visibility: visible;
       transform: scale(.80) translateZ(0);
     }
+
+
     &:hover{
       li{
         opacity: 0.55;
@@ -138,23 +142,48 @@ header {
         &:hover {
           opacity: 1;
           filter: none;
+          left: 0;
+          right: 0;
+
+          .redShadow {  }
+          .greenShadow {  text-shadow:-2px 0 red;}
+
+          .bottom {
+            -webkit-clip-path: inset(50% 0 0 0);
+            clip-path: inset(50% 0 0 0);
+            display: inherit;
+            position: absolute;
+            left: 0;
+            right: 0;
+          }
+
+          .top {
+            -webkit-clip-path: inset(0 0 49% 0);
+            clip-path: inset(0 0 49%);
+            position: relative;
+          }
         }
       }
     }
     li {
+      .bottom {
+        display:none;
+      }
       h2 {
-        font-size: 4vw !important;
-        line-height: 10vw;
+        font-size: 3vw !important;
+        line-height: 15vw;
+        text-space: 0.9em;
         display: inline;
+        font-family: $font-family-base;
         color: $title-color;
-        //text-shadow: 2px 2px 5px #000000;
       }
       text-align: center;
-      font-weight: bold;
+      font-weight: 100;
       cursor: pointer;
       transition: all .4s cubic-bezier(.535, 0, 0, 1) .2s;
       color: #f9f4ea;
       text-transform: uppercase;
+      position: relative;
     }
   }
 }
@@ -184,7 +213,8 @@ header {
 }
 
 #large-header {
-  //background-image: url(/assets/images/navigation_bg.png);
+  background-image: url(/assets/images/navigation_bg.png);
+  opacity: 0.25;
 }
 
 .main-title {
@@ -198,16 +228,6 @@ header {
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-}
-
-.demo-1 .main-title {
-  text-transform: uppercase;
-  font-size: 4.2em;
-  letter-spacing: 0.1em;
-}
-
-.main-title .thin {
-  font-weight: 200;
 }
 
 @media only screen and (max-width: 768px) {

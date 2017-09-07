@@ -12,12 +12,12 @@
     <span class="menu-btn_text" ratio="0.5" scale="0" [style]="textStyle()"><span *ngIf="!callapse" >NAVIGATION</span><span *ngIf="callapse" >CLOSE</span></span>
   </div>
   <div>
-    <ul class="menu-list" [ngClass]="{'is-active': callapse}">
+    <ul class="menu-list" [ngClass]="{'is-active': callapse}" >
       <li class="menu-list-item" routerLink="" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link"><h2>Home</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Home</h2><h2 class="bottom">Home</h2></a>
       </li>
       <li class="menu-list-item" routerLink="/imprint" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link"><h2>imprint</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Imprint</h2><h2 class="bottom">Imprint</h2></a>
       </li>
     </ul>
   </div>

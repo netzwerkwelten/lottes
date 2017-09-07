@@ -68,7 +68,8 @@
     left: 0;
     z-index: -1;
 
-    background: radial-gradient(#5a564e, #6f6653);
+    //background: radial-gradient(#5a564e, #6f6653);
+    background-image: radial-gradient(circle farthest-corner at center, #3c4b57 0%, #1c262b 100%);
     //background-size: cover;
     //background: url(/assets/images/Cloudy-Sky.jpg);
     overflow: hidden;

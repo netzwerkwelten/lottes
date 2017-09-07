@@ -3,3 +3,15 @@
 //@import '../../../node_modules/compass-mixins/lib/_compass.scss';
 
 @import '../styles';
+
+
+@mixin gitchText($offset, $text) {
+  content: $text;
+  position: absolute;
+  left: $offset;
+  top: $offset;
+  clip: rect(0, 900px, 0, 0);
+  color: white;
+  animation: glitch 3s infinite alternate-reverse;
+  animation-delay: 4s;
+}

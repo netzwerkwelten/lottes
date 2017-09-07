@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { RootComponent } from './root/root.component';
 import { HeaderComponent } from './root/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './root/footer/footer.component';
+import { GlitchDirective } from './shared/animation/glitch.directive';
 
 export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOptions,  router: Router) {
   options.withCredentials = true;
@@ -26,7 +28,9 @@ export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOpt
     ImprintComponent,
     HomeComponent,
     RootComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    GlitchDirective
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: false }),
