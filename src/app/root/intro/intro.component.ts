@@ -17,7 +17,7 @@ export class IntroComponent implements OnInit {
     }
 
     public introStart() {
-        const aboutAnimation = new TimelineMax({repeat: -1});
+        const aboutAnimation = new TimelineMax({repeat: 0});
 
         aboutAnimation
             .to('.load', .5, {
