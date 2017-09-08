@@ -8,7 +8,7 @@ import {TweenLite, ctx, TimelineMax} from 'gsap';
     styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
-
+    public aboutAnimation:any;
     constructor() {
     }
 
@@ -16,10 +16,14 @@ export class IntroComponent implements OnInit {
         this.introStart();
     }
 
-    public introStart() {
-        const aboutAnimation = new TimelineMax({repeat: 0});
+    public fastenUp() {
+        TweenLite.to(this.aboutAnimation, 2, {timeScale:10, ease:'Linear.easeNone'});
+    }
 
-        aboutAnimation
+    public introStart() {
+        this.aboutAnimation = new TimelineMax({repeat: 0});
+
+        this.aboutAnimation
             .to('.load', .5, {
                 autoAlpha: 0,
                 y: '-40%',
@@ -141,7 +145,8 @@ export class IntroComponent implements OnInit {
                 y: '-10px'
             }, {
                 autoAlpha: 1,
-                y: '0'
+                y: '0',
+                ease: 'Power3.easeIn'
             }, '-=.5')
             .to('.icon', .3, {
                 autoAlpha: 0,
@@ -234,6 +239,7 @@ export class IntroComponent implements OnInit {
             .to('.browser', 0.5, {
                 width: '0px',
                 height: '0px',
+                autoAlpha: 0,
                 borderRadius: '5px',
                 ease: 'Elastic.easeOut.config(1, 0.75)'
             }, '-=.5')
@@ -253,20 +259,21 @@ export class IntroComponent implements OnInit {
             })
             .to('.browser', 0, {
                 maxWidth: 'initial',
-                maxHeight: 'initial'
+                maxHeight: 'initial',
+                autoAlpha: 1,
             })
-            .to('.browser', 1, {
+            .to('.browser', .5, {
                 width: '100%',
                 height: '100%',
                 borderRadius: '0%',
                 ease: 'Power4.easeOut',
                 alpha: 0
             })
-            .to('.browser-wrap', .5, {
+            .to('.browser-wrap', .1, {
                 autoAlpha: 0,
                 display: 'none'
             })
-            .to('.intro', .5, { //Here end of intro starts
+            .to('.intro', .1, { //Here end of intro starts
                 autoAlpha: 0,
                 display: 'none'
             })
@@ -286,9 +293,10 @@ export class IntroComponent implements OnInit {
                 autoAlpha: 0,
                 scale: '0.01'
             })
-            .to('.wrapper', .2, {
+            .to('.wrapper', 2, {
                 autoAlpha: 1,
-                scale: '1'
+                scale: '1',
+                ease: 'Power1.easeOut'
             });
 
 
