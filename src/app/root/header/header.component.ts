@@ -33,6 +33,15 @@ export class HeaderComponent implements OnInit {
      this.canvasAnimation();
   }
 
+  public openNav(){
+    this.callapse = !this.callapse;
+    if(!this.callapse){
+      this.removeListeners();
+    }else{
+      this.addListeners();
+    }
+  }
+
   public hoverdiv(e) {
     this.left = ( e.clientX - 45 ) / 2 + '';
     this.left2 = ( e.clientX - 45 ) / 2 * 1.3 + '';
@@ -55,7 +64,6 @@ export class HeaderComponent implements OnInit {
   private canvasAnimation() {
     this.initHeader();
     this.initAnimation();
-    this.addListeners();
   }
 
   private initHeader() {
@@ -127,6 +135,13 @@ export class HeaderComponent implements OnInit {
     }
     window.addEventListener('scroll', this.scrollCheck.bind(this));
     window.addEventListener('resize', this.resize.bind(this));
+  }
+  private removeListeners() {
+    if (!('ontouchstart' in window)) {
+      window.removeEventListener('mousemove', this.mouseMove.bind(this));
+    }
+    window.removeEventListener('scroll', this.scrollCheck.bind(this));
+    window.removeEventListener('resize', this.resize.bind(this));
   }
 
   private mouseMove(e) {

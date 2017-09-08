@@ -24,7 +24,7 @@ export class RootComponent implements OnInit {
   public lFollowY = 0;
   public x = 0;
   public y = 0;
-  public friction = 1 / 30;
+  public friction = 1 / 20;
   public width;
   public height;
 

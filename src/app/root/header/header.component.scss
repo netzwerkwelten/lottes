@@ -2,15 +2,7 @@
 
 header {
   height: 100px;
-  .logo {
-    float: right;
-    img {
-      height: 50px;
-      width: auto;
-    }
-  }
   .nav-item {
-
     cursor: pointer;
     &.active {
       outline: none !important;
@@ -29,7 +21,7 @@ header {
       font-family: $font-family-slap;
       letter-spacing: .2em;
       font-size: 0.75em;
-      font-weight: 600;
+      font-weight: 800;
       top: 26px;
       left: 30px;
       position: absolute;
@@ -100,8 +92,19 @@ header {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background: radial-gradient(#666, #222);
+      background: radial-gradient(#3e5569, #222);
       opacity: .95;
+      .large-header {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      #large-header {
+        background-image: url(/assets/images/navigation_bg.png);
+        opacity: 0.25;
+      }
     }
 
     &.is-active {
@@ -109,6 +112,18 @@ header {
       visibility: visible;
     }
 
+    //.main-title {
+    //  position: absolute;
+    //  margin: 0;
+    //  font-size: 50px;
+    //  padding: 0;
+    //  color: #f9f1e9;
+    //  text-align: center;
+    //  top: 50%;
+    //  left: 50%;
+    //  -webkit-transform: translate3d(-50%, -50%, 0);
+    //  transform: translate3d(-50%, -50%, 0);
+    //}
   }
   .menu-list {
     padding: 5% 0;
@@ -145,7 +160,7 @@ header {
           left: 0;
           right: 0;
 
-          .redShadow {  }
+          .redShadow { text-shadow: 5px 0 red; }
           .greenShadow {  text-shadow:-2px 0 red;}
 
           .bottom {
@@ -170,11 +185,15 @@ header {
         display:none;
       }
       h2 {
+        letter-spacing: -.1em;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: $font-family-slap;
+
         font-size: 3vw !important;
         line-height: 15vw;
-        text-space: 0.9em;
+        //text-space: 0.9em;
         display: inline;
-        font-family: $font-family-base;
         color: $title-color;
       }
       text-align: center;
@@ -190,6 +209,10 @@ header {
 
 @media (max-width: 991px) {
   header {
+    .nav-button {
+      top: 5px;
+      left: 5px;
+    }
     .menu-wrapper {
       width: 10vh;
       height: 8vh;
@@ -204,31 +227,7 @@ header {
   }
 }
 
-/* Header */
-.large-header {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
 
-#large-header {
-  background-image: url(/assets/images/navigation_bg.png);
-  opacity: 0.25;
-}
-
-.main-title {
-  position: absolute;
-  margin: 0;
-  font-size: 50px;
-  padding: 0;
-  color: #f9f1e9;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-}
 
 @media only screen and (max-width: 768px) {
   .demo-1 .main-title {

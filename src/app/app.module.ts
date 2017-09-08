@@ -13,6 +13,7 @@ import { HeaderComponent } from './root/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './root/footer/footer.component';
 import { GlitchDirective } from './shared/animation/glitch.directive';
+import { IntroComponent } from './root/intro/intro.component';
 
 export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOptions,  router: Router) {
   options.withCredentials = true;
@@ -30,7 +31,8 @@ export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOpt
     RootComponent,
     HeaderComponent,
     FooterComponent,
-    GlitchDirective
+    GlitchDirective,
+    IntroComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: false }),

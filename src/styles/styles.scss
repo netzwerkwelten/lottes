@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:800|Lato:100,300,600,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,600,800|Lato:100,300,600,800');
+
+//@import '../../node_modules/font-awesome/scss/font-awesome.scss';
 
 $font-family-base: 'Lato', sans-serif;
 $font-family-slap: 'Open Sans', serif;
@@ -12,17 +14,20 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #e0dacd;
+  background-image: radial-gradient(circle farthest-corner at center, #3c4b57 0%, #1c262b 100%);
   height: 100vh;
   font-size: .9rem;
   color: $font-color;
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-base;
+  letter-spacing: -0.05em;
+
   h1,h2,h3,h4,h5,h6{
     font-family: $font-family-slap;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
     color: $title-color;
+    letter-spacing: -0.05em;
   }
   h1{
     font-size: 1.9em;
@@ -31,7 +36,8 @@ body{
       color: #000;
       font-size: 0.3em;
       position: relative;
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: -.1em;
       top: -20px;
       left: 25px;
       padding: 3px 5px;
@@ -70,18 +76,14 @@ body{
     width: 100vw;
     text-align: center;
     .content-middle {
-      //background: #fff;
-      //border: 1px solid #eaeaea;
-      padding: 2em 3em 2em 3em;
+      padding: 2em 3em 4em 3em;
       margin: 3em auto;
-      background: transparentize(#fff,.9);
+      //background: transparentize(#fff,.9);
       line-height: 1.7em;
-      width: 80%;
       max-width: 1200px;
-      min-height: 80vh;
       h3{
         font-size: 1.6em;
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: 2px;
         margin-bottom: 1.2em;
       }
