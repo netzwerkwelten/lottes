@@ -114,15 +114,16 @@ export class IntroComponent implements OnInit {
                 y: '20px',
                 ease: 'Power3.easeIn'
             }, '-=.3')
-            .to('.aboutAni', 1, {
+            .to('.aboutAni', 0.5, {
                 borderRadius: '50%',
-                width: '50px',
-                height: '50px',
+                width: '0',
+                height: '0',
                 top: '50%',
                 y: '-50%',
                 autoAlpha: 0,
-                ease: 'Elastic.easeInOut.config(1, 0.75)'
-            })
+                ease: 'Power3.easeIn',
+                delay: 0.5
+            }, '-=.3')
             .fromTo('.browser', 1, {
                 autoAlpha: 0,
                 scale: .5
@@ -131,7 +132,8 @@ export class IntroComponent implements OnInit {
                 scale: 1,
                 y: '-50%',
                 borderRadius: '50%',
-                ease: 'Elastic.easeOut.config(1, 0.75)'
+                ease: 'Elastic.easeOut.config(1, 0.75)',
+                delay: 1.2
             }, '-=1')
             .to('.browser', 1, {
                 width: '100%',
@@ -201,37 +203,7 @@ export class IntroComponent implements OnInit {
                 display: 'none',
                 delay: .7
             })
-            .fromTo('.text-web', .3, {
-                autoAlpha: 0,
-                y: '-10px'
-            }, {
-                autoAlpha: 1,
-                y: '0'
-            })
             .to('.phone', .3, {
-                autoAlpha: 0,
-                y: '10px',
-                display: 'none'
-            })
-            .to('.body', 0, {
-                autoAlpha: 1,
-                y: '0',
-                display: '',
-                height: '100%',
-                padding: 0
-            })
-            .to('.browser', 1, {
-                width: '10px',
-                height: '10px',
-                ease: 'Elastic.easeInOut.config(1, 0.75)'
-            })
-            .to('.browser', 1, {
-                width: '200px',
-                height: '200px',
-                borderRadius: '5px',
-                ease: 'Elastic.easeOut.config(1, 0.75)'
-            }, '-=.3')
-            .to('.text-web', .3, {
                 autoAlpha: 0,
                 y: '10px',
                 display: 'none'
@@ -248,30 +220,26 @@ export class IntroComponent implements OnInit {
                 y: '-80%',
                 display: ''
             }, {
-                autoAlpha: 1,
+                autoAlpha: 0,
                 y: '-50%'
             })
-            .to('.more', .3, {
-                alpha: 0,
-                y: '10px',
-                display: 'none',
-                delay: 1
-            })
+
             .to('.browser', 0, {
                 maxWidth: 'initial',
                 maxHeight: 'initial',
-                autoAlpha: 1,
+                autoAlpha: 0,
             })
-            .to('.browser', .5, {
+            .to('.browser', 2, {
                 width: '100%',
                 height: '100%',
                 borderRadius: '0%',
                 ease: 'Power4.easeOut',
                 alpha: 0
             })
-            .to('.browser-wrap', .1, {
+            .to('.browser-wrap', 1, {
                 autoAlpha: 0,
-                display: 'none'
+                display: 'none',
+                ease: 'Power4.easeOut',
             })
             .to('.intro', .1, { //Here end of intro starts
                 autoAlpha: 0,
@@ -289,15 +257,14 @@ export class IntroComponent implements OnInit {
             .to('header', .2, {
                 top: 20,
             })
-            .from('.wrapper', .1, {
-                autoAlpha: 0,
-                scale: '0.01'
-            })
-            .to('.wrapper', 2, {
-                autoAlpha: 1,
-                scale: '1',
-                ease: 'Power1.easeOut'
-            });
+            .fromTo('.wrapper', .3, {
+              autoAlpha: 0,
+              y: '-10px'
+            }, {
+              autoAlpha: 1,
+              y: '0',
+              ease: 'Power3.easeIn'
+            }, '-=.5');
 
 
     }
