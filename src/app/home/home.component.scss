@@ -1,3 +1,4 @@
+@import "../../styles/shared/common";
 .home{
   //height: 100vh;
   //width: 100vw;
@@ -7,4 +8,63 @@
   //position: fixed;
   //left: 0;
   //top: 0;
+}
+
+.sky{
+
+}
+.tree1{
+  background-image: url(/assets/scene/tree1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  background-position-x: 60vw;
+}
+.tree2{
+  background-image: url(/assets/scene/tree_ivy_vines.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 75vw;
+}
+.tree3{
+  background-image: url(/assets/scene/tree6.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 100px;
+  opacity: 0.1;
+  background-position-x: -50vw;
+}
+.tree4{
+  background-image: url(/assets/scene/tree6.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 0;
+  opacity: 0.05;
+  background-position-x: 40vw;
+
+}
+.element1{
+  background-image: url(/assets/scene/element1.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 50vh;
+  left: -150px;
+  opacity: 0.1;
+  background-position-x: 0vw;
+}
+.flower{
+  background-image: url(/assets/scene/mountains.svg);
+  background-position-y: bottom;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+.border{
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%, rgba(0,0,0,0.93) 40%, rgba(0,0,0,1) 99%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.93) 40%,rgba(0,0,0,1) 99%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 40%,rgba(0,0,0,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 );
 }

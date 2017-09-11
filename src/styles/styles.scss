@@ -75,6 +75,8 @@ body{
   .wrapper{
     width: 100vw;
     text-align: center;
+    z-index: 200;
+    position: relative;
     .content-middle {
       padding: 2em 3em 4em 3em;
       margin: 3em auto;

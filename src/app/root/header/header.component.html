@@ -14,10 +14,16 @@
   <div>
     <ul class="menu-list" [ngClass]="{'is-active': callapse}" >
       <li class="menu-list-item" routerLink="" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link" appGlitch><h2 class="top">Home</h2><h2 class="bottom">Home</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Startseite</h2><h2 class="bottom">Startseite</h2></a>
       </li>
-      <li class="menu-list-item" routerLink="/imprint" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link" appGlitch><h2 class="top">Imprint</h2><h2 class="bottom">Imprint</h2></a>
+      <li class="menu-list-item" routerLink="/photos" routerLinkActive="active" (click)="callapse = !callapse" >
+        <a class="menu-list-link" appGlitch><h2 class="top">Fotografie</h2><h2 class="bottom">Fotografie</h2></a>
+      </li>
+      <li class="menu-list-item" routerLink="/code" routerLinkActive="active" (click)="callapse = !callapse" >
+        <a class="menu-list-link" appGlitch><h2 class="top">Coding</h2><h2 class="bottom">Coding</h2></a>
+      </li>
+      <li class="menu-list-item" routerLink="/wood" routerLinkActive="active" (click)="callapse = !callapse" >
+        <a class="menu-list-link" appGlitch><h2 class="top">Holz</h2><h2 class="bottom">Holz</h2></a>
       </li>
     </ul>
   </div>

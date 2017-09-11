@@ -8,12 +8,12 @@ function fade() {
   return trigger('routerTransition', [
     state('void', style({
       left: 0,
-      margin: '-15px',
+      margin: '0px',
       padding: '0',
       opacity: 1
     })),state('*', style({
       position: 'absolute',
-      margin: '-15px',
+      margin: '0px',
       left: 0,
       opacity: 1
     })),
@@ -27,7 +27,7 @@ function fade() {
       animate('1.1s ease-in-out', style({
         left: 0,
         opacity: 1,
-        margin: '-15px',
+        margin: '0px',
         filter: 'blur(0px)'
       }))
     ]),
