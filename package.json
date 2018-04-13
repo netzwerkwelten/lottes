@@ -22,9 +22,12 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/router": "^5.2.9",
     "core-js": "^2.4.1",
+    "createjs": "^1.0.1",
+    "createjs-module": "^0.8.3",
     "font-awesome": "^4.7.0",
-    "gsap": "^1.20.0",
+    "gsap": "^1.20.4",
     "rxjs": "^5.1.0",
+    "three": "^0.91.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
