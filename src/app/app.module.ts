@@ -17,7 +17,6 @@ import { IntroComponent } from './root/intro/intro.component';
 import { PhotosComponent } from './photos/photos.component';
 import { CodeComponent } from './code/code.component';
 import { WoodComponent } from './wood/wood.component';
-import { Intro3dComponent } from './root/intro-3d/intro-3d.component';
 
 export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOptions,  router: Router) {
   options.withCredentials = true;
@@ -39,8 +38,7 @@ export function customHttpLoaderFactory(backend: XHRBackend, options: RequestOpt
     IntroComponent,
     PhotosComponent,
     CodeComponent,
-    WoodComponent,
-    Intro3dComponent
+    WoodComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { useHash: false }),

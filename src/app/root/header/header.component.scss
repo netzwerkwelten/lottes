@@ -102,7 +102,8 @@ header {
       }
 
       #large-header {
-        background-image: url(/assets/images/IMG_20170613_141038-01.jpeg);
+        background-image: url(/assets/photos/nav-bg.jpg);
+        background-position-x: center;
         background-size: cover;
         height: 100%;
         opacity: 0.25;
@@ -115,16 +116,18 @@ header {
     }
   }
   .menu-list {
-    padding: 5% 0;
+    padding: 0;
     z-index: 1000;
     list-style: none;
-    top: 5%;
+    top: 25%;
+    bottom: 25%;
     left: 0;
     right: 0;
     display: block;
     opacity: 0;
     margin: 0px auto;
     width: 30vw;
+    height: fit-content;
     visibility: hidden;
     position: absolute;
     transition: all 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
@@ -134,24 +137,33 @@ header {
       visibility: visible;
       transform: scale(.80) translateZ(0);
     }
+    li {
+      transition: filter 1.2s cubic-bezier(.535, 0, 0, 1) .2s;
+    }
 
     &:hover {
       li {
         opacity: 0.55;
         filter: blur(1px);
+        h2 {
+          font-size: 1.5rem;
+          line-height: 4.2rem;
+        }
         &:hover {
           opacity: 1;
           filter: none;
           left: 0;
           right: 0;
-
           .redShadow {
             text-shadow: 5px 0 red;
           }
           .greenShadow {
-            text-shadow: -2px 0 red;
+            text-shadow: -2px 0 black;
           }
-
+          h2 {
+            font-size: 2rem;
+            line-height: 4rem;
+          }
           .bottom {
             -webkit-clip-path: inset(50% 0 0 0);
             clip-path: inset(50% 0 0 0);
@@ -179,11 +191,13 @@ header {
         font-weight: 800;
         font-family: $font-family-slap;
 
-        font-size: 3vw !important;
-        line-height: 15vh;
+        font-size: 2rem;
+        line-height: 4rem;
         //text-space: 0.9em;
         display: inline;
         color: $title-color;
+        transition: font-size 1s cubic-bezier(.535, 0, 0, 1) .2s;
+        transition: line-height 1s cubic-bezier(.535, 0, 0, 1) .2s;
       }
       text-align: center;
       font-weight: 100;

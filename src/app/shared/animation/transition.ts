@@ -1,4 +1,4 @@
-import {trigger, state, animate, style, transition} from '@angular/animations';
+import {trigger, state, animate, style, transition, query, stagger} from '@angular/animations';
 
 export function routerTransition() {
   return fade();
@@ -11,13 +11,15 @@ function fade() {
       margin: '0px',
       padding: '0',
       opacity: 1
-    })),state('*', style({
+    })),
+    state('*', style({
       position: 'absolute',
       margin: '0px',
       left: 0,
       opacity: 1
     })),
     transition(':enter', [
+      query('.content-middle', style({ opacity: 0 })),
       style({
         position: 'fixed',
         left: '100%',
@@ -29,7 +31,12 @@ function fade() {
         opacity: 1,
         margin: '0px',
         filter: 'blur(0px)'
-      }))
+      })),
+      query('.content-middle', stagger(400, [
+        style({ transform: 'translateY(100px)' }),
+        animate('1s ease-in-out',
+          style({ transform: 'translateY(0px)', opacity: 1 })),
+      ]), { optional: true })
     ]),
     transition(':leave', [
       animate('0.9s ease-in-out', style({
