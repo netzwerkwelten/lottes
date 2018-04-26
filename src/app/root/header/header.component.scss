@@ -26,7 +26,7 @@ header {
       left: 30px;
       position: absolute;
       display: inline-block;
-      color: $light-color;
+      color: $nav-button-color;
       -webkit-transition: all 0.1s ease-in-out;
       -moz-transition: all 0.1s ease-in-out;
       -o-transition: all 0.1s ease-in-out;
@@ -35,7 +35,7 @@ header {
     }
     .menu-btn_circle {
       svg {
-        stroke: $light-color;
+        stroke: $nav-button-color;
         display: inline-block;
         width: 50px;
         height: 50px;
@@ -83,8 +83,9 @@ header {
     width: 100vh;
     height: 100vh;
     z-index: 900;
-    .bg-image {
+    #bg-image {
       position: absolute;
+      overflow: hidden;
       width: 100vw;
       height: 100vh;
       top: 0px;
@@ -93,7 +94,7 @@ header {
       background-repeat: no-repeat;
       background-position: center;
       background: radial-gradient(#3e5569, #222);
-      opacity: .95;
+      opacity: .75;
       .large-header {
         position: relative;
         width: 100%;
@@ -102,11 +103,17 @@ header {
       }
 
       #large-header {
-        background-image: url(/assets/photos/nav-bg.jpg);
+        //background-image: url(/assets/photos/nav-bg.jpg);
+
+        background: #350096;
+        background: -moz-linear-gradient(45deg,#350096 0,#00e3c6 100%);
+        background: -webkit-linear-gradient(45deg,#350096 0,#00e3c6 100%);
+        background: linear-gradient(45deg,#350096 0,#00e3c6 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#350096', endColorstr='#00e3c6', GradientType=1 );
         background-position-x: center;
         background-size: cover;
         height: 100%;
-        opacity: 0.25;
+        opacity: 0.65;
       }
     }
 
@@ -145,10 +152,6 @@ header {
       li {
         opacity: 0.55;
         filter: blur(1px);
-        h2 {
-          font-size: 1.5rem;
-          line-height: 4.2rem;
-        }
         &:hover {
           opacity: 1;
           filter: none;
@@ -159,10 +162,6 @@ header {
           }
           .greenShadow {
             text-shadow: -2px 0 black;
-          }
-          h2 {
-            font-size: 2rem;
-            line-height: 4rem;
           }
           .bottom {
             -webkit-clip-path: inset(50% 0 0 0);
@@ -186,18 +185,17 @@ header {
         display: none;
       }
       h2 {
-        letter-spacing: -.1em;
+        letter-spacing: .1em;
         text-transform: uppercase;
-        font-weight: 800;
+        font-weight: 400;
         font-family: $font-family-slap;
-
         font-size: 2rem;
         line-height: 4rem;
-        //text-space: 0.9em;
+        text-space: 0.9em;
         display: inline;
         color: $title-color;
-        transition: font-size 1s cubic-bezier(.535, 0, 0, 1) .2s;
-        transition: line-height 1s cubic-bezier(.535, 0, 0, 1) .2s;
+        transition: font-size .4s ease-in-out .2s;
+        transition: line-height .4s cubic-bezier(.535, 0, 0, 1) .2s;
       }
       text-align: center;
       font-weight: 100;

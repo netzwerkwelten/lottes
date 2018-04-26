@@ -74,7 +74,7 @@ export class RootComponent implements OnInit {
     this.x += (this.lFollowX - this.x) * this.friction;
     this.y += (this.lFollowY - this.y) * this.friction;
     const translate = 'translate(' + this.x + 'px, ' + this.y + 'px) scale(1.1)';
-    const canvas = document.getElementById('bg');
+    const canvas = document.getElementById('bg-image');
     canvas.setAttribute('style', '-webit-transform:' + translate + ';-moz-transform:'+ translate + '; transform:' + translate);
     window.addEventListener('mousemove', this.mouseMove.bind(this));
     window.requestAnimationFrame(this.moveBackground.bind(this));

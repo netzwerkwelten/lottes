@@ -22,7 +22,6 @@ function fade() {
       query('.content-middle', style({ opacity: 0 })),
       style({
         position: 'fixed',
-        left: '100%',
         opacity: 0,
         filter: 'blur(15px)'
       }),
@@ -39,8 +38,7 @@ function fade() {
       ]), { optional: true })
     ]),
     transition(':leave', [
-      animate('0.9s ease-in-out', style({
-        left: '-100%',
+      animate('0.9s linear', style({
         opacity: 0,
         filter: 'blur(15px)'
       }))

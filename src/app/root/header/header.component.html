@@ -1,7 +1,7 @@
 <header>
-  <!--<a class="navbar-brand logo pull-right" routerLink="/">-->
-    <!--<img src="assets/images/logo.png"/>-->
-  <!--</a>-->
+  <a class="navbar-brand logo pull-right" routerLink="/">
+    <img src="assets/images/logo.png"/>
+  </a>
 
   <div class="nav-button" (mousemove)='hoverdiv($event)' (mouseleave)="resetdiv( )" (click)="openNav()" >
     <span class="menu-btn_circle" ratio="1" scale="0.5" [style]="menueStyle()">
@@ -14,21 +14,21 @@
   <div>
     <ul class="menu-list" [ngClass]="{'is-active': callapse}" >
       <li class="menu-list-item" routerLink="" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link" appGlitch><h2 class="top">Startseite</h2><h2 class="bottom">Startseite</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Home</h2><h2 class="bottom">Home</h2></a>
       </li>
       <li class="menu-list-item" routerLink="/photos" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link" appGlitch><h2 class="top">Fotografie</h2><h2 class="bottom">Fotografie</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Photos</h2><h2 class="bottom">Photos</h2></a>
       </li>
       <li class="menu-list-item" routerLink="/code" routerLinkActive="active" (click)="callapse = !callapse" >
         <a class="menu-list-link" appGlitch><h2 class="top">Coding</h2><h2 class="bottom">Coding</h2></a>
       </li>
       <li class="menu-list-item" routerLink="/wood" routerLinkActive="active" (click)="callapse = !callapse" >
-        <a class="menu-list-link" appGlitch><h2 class="top">Holz</h2><h2 class="bottom">Holz</h2></a>
+        <a class="menu-list-link" appGlitch><h2 class="top">Wood</h2><h2 class="bottom">Wood</h2></a>
       </li>
     </ul>
   </div>
   <div class="menu-wrapper" [ngClass]="{'is-active': callapse}">
-    <div class="bg-image">
+    <div id="bg-image">
       <div id="large-header" class="large-header" #largeHeader>
         <canvas id="demo-canvas" #canvas></canvas>
       </div>
