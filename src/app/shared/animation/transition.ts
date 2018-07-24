@@ -35,6 +35,17 @@ function fade() {
         style({ transform: 'translateY(100px)' }),
         animate('1s ease-in-out',
           style({ transform: 'translateY(0px)', opacity: 1 })),
+      ]), { optional: true }),
+      query('.text-box h2::before', stagger(400, [
+        style({
+          '-webkit-transform': 'translate3d(10px,0,0) scale(0,1)',
+          transform: 'translate3d(10px,0,0) scale(0,1)'
+        }),
+        animate('1s ease-in-out',
+          style({
+            '-webkit-transform': 'translate3d(0,0,0) scale(1,1)',
+            transform: 'translate3d(0,0,0) scale(1,1)'
+          })),
       ]), { optional: true })
     ]),
     transition(':leave', [

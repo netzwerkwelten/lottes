@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
   public points;
   public target = {x: 0, y: 0};
   public animateHeader = true;
+  private movex: number = 0;
+  private movey: number = 0;
 
   constructor(private sanitizer: DomSanitizer,
               public renderer: Renderer2,
@@ -70,7 +72,7 @@ export class HeaderComponent implements OnInit {
     this.addListeners();
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.target.x = this.width / 2
+    this.target.x = this.width / 2;
     this.target.y = this.height / 2;
 
     this.largeHeader = document.getElementById('large-header');
@@ -80,7 +82,7 @@ export class HeaderComponent implements OnInit {
     this.canvas.width = this.width;
     this.canvas.height = this.height;
 
-    this.ctx = this.canvas.getContext('2d'); 
+    this.ctx = this.canvas.getContext('2d');
     // create points
     this.points = [];
     for (let x = 0; x < this.width; x = x + this.width / 25) {
@@ -93,10 +95,10 @@ export class HeaderComponent implements OnInit {
     }
 
     // for each point find the 5 closest points
-    for (let i in this.points) {
+    for (const i in this.points) {
       const closest = [];
       const p1 = this.points[i];
-      for (let j in this.points) {
+      for (const j in this.points) {
         const p2 = this.points[j];
         if (!(p1 === p2)) {
           let placed = false;
@@ -123,7 +125,7 @@ export class HeaderComponent implements OnInit {
     }
 
     // assign a circle to each point
-    for (let i in this.points) {
+    for (const i in this.points) {
       const c = new this.Circle(this.points[i], 22 + Math.random() * 10, 'rgba(255,255,255,0.3)');
       this.points[i].circle = c;
     }
@@ -148,6 +150,7 @@ export class HeaderComponent implements OnInit {
   private mouseMove(e) {
     let posy = 0;
     let posx = posy;
+
     if (e.pageX || e.pageY) {
       posx = e.pageX;
       posy = e.pageY;
@@ -176,7 +179,7 @@ export class HeaderComponent implements OnInit {
     }
 
     if (document.getElementById('move4')) {
-      document.getElementById('move4').setAttribute('style', 'transform: matrix3d(1,0,0.00,' + rotateAmountX * 0.000001 / 5 + ',0.00,1,0.00,' + rotateAmountY * 0.000001 / 5 + ',0,0,1,0,0,0,-1,1)');
+      document.getElementById('move4').setAttribute('style', ' transform: matrix3d(1,0,0.05,' + rotateAmountX * 0.000001 / 3 + ',0.00,1,0.00,' + rotateAmountY * 0.000001 / 3 + ',0,0,1,0,0,0,-1,1)');
     }
 
   }

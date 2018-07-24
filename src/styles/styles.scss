@@ -129,6 +129,7 @@ body{
           height: auto;
           -o-object-fit: cover;
           object-fit: cover;
+
         }
       }
       .description{
@@ -136,14 +137,42 @@ body{
         position: relative;
         width: 60vw;
         margin: 0;
-        right: -10vw;
+        right: -15vw;
         top: 10vh;
         padding-left: 20vw;
+
         .text-box{
+          h2{
+            &:before{
+              content:' ';
+              position: absolute;
+              top: 28px;
+              left: -120px;
+              width: 100px;
+              height: 1px;
+              display: block;
+              background-color: rgba(255,255,255,.3);
+              opacity: .6;
+              -webkit-transform-origin: right center;
+              -ms-transform-origin: right center;
+              transform-origin: right center;
+              //-webkit-transform: translate3d(10px,0,0) scale(0,1);
+              //transform: translate3d(10px,0,0) scale(0,1);
+              -webkit-transition: -webkit-transform 2s cubic-bezier(.19,1,.22,1);
+              transition: transform 2s cubic-bezier(.19,1,.22,1);
+
+              -webkit-transition-delay: .1s;
+              transition-delay: .1s;
+              background: #fff;
+            }
+
+          }
           text-align: left;
           position: absolute;
           left: 35vw;
           padding: 1rem;
+          text-shadow: -14px 38px 18px rgba(150, 150, 150, 1);
+
         }
         //top: 15rem;
         //left: 50vw;
