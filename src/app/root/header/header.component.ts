@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, Renderer2} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TweenLite, ctx, TimelineMax } from 'gsap';
-
+declare var window: any;
 
 @Component({
   selector: 'app-header',
@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   public animateHeader = true;
   private movex: number = 0;
   private movey: number = 0;
-
   constructor(private sanitizer: DomSanitizer,
               public renderer: Renderer2,
               private el: ElementRef) {
